@@ -7,12 +7,14 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { router } from './app/router/Routes.tsx';
 import { RouterProvider } from 'react-router-dom';
-import { StoreProvider } from './app/context/StoreContext.tsx';
+import { Provider } from 'react-redux';
+import { store } from './app/store/configureStore.ts';
 
+//console.log(store.getState(),"state of store");
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <StoreProvider>
-      <RouterProvider router={router}/>
-    </StoreProvider>
+      <Provider store={store}>
+        <RouterProvider router={router}/>
+      </Provider>
   </React.StrictMode>
 )

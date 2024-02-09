@@ -54,7 +54,7 @@ builder.Services.AddCors(); // for access from other browser
 builder.Services.AddIdentityCore<User>(opt => {
     opt.User.RequireUniqueEmail = true;
 })
-        .AddRoles<IdentityRole>()
+        .AddRoles<Role>()
         .AddEntityFrameworkStores<StoreContext>();
 
 //builder.Services.AddAuthentication(); // for non jwt authenticate
